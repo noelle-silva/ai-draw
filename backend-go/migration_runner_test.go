@@ -9,7 +9,7 @@ import (
 
 func TestRunMigrationsConvergesPluginEraLayout(t *testing.T) {
 	dataDir := t.TempDir()
-	legacyAbsolutePath := `\\?\E:\eucli-project\fast-window\src-tauri\target\debug\data\ai-draw\ref-images\old-ref.jpg`
+	legacyAbsolutePath := `\\?\C:\legacy-data\ai-draw\ref-images\old-ref.jpg`
 	writeJSONForMigrationTest(t, filepath.Join(dataDir, metaFile), map[string]any{"schemaVersion": 1, "migratedAt": float64(1)})
 	writeTestFile(t, filepath.Join(dataDir, pluginReferenceImagesDir, "old-ref.jpg"), []byte{0xff, 0xd8, 0xff})
 	writeJSONForMigrationTest(t, filepath.Join(dataDir, legacyPackFile), map[string]any{

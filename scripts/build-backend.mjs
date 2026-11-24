@@ -52,7 +52,7 @@ function devSidecarName() {
 async function main() {
   const backendStat = await fs.stat(backendDir).catch(() => null)
   if (!backendStat?.isDirectory()) {
-    throw new Error('apps/ai-draw/backend-go is not implemented yet; complete the Go sidecar phase before building the backend')
+    throw new Error('backend-go is not implemented yet; complete the Go sidecar phase before building the backend')
   }
 
   const tuple = await hostTuple()
